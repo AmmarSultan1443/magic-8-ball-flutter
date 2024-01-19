@@ -44,15 +44,33 @@ class _BallState extends State<Ball> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: MaterialButton(
-        onPressed: () {
-          //print('I got clicked');
-          randomizeTheBallNmber();
-          //print(ballNumber);
-        },
-        child: Image.asset('images/ball$ballNumber.png'),
-      ),
+    return Column(
+      children: [
+        Expanded(
+          flex: 1,
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Container(
+              padding: EdgeInsets.all(20.0),
+              color: Colors.white,
+              child: Image.asset('images/logoAIM.png'),
+            ),
+          ),
+        ),
+        Expanded(
+          flex: 3,
+          child: Center(
+            child: MaterialButton(
+              onPressed: () {
+                //print('I got clicked');
+                randomizeTheBallNmber();
+                //print(ballNumber);
+              },
+              child: Image.asset('images/ball$ballNumber.png'),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
