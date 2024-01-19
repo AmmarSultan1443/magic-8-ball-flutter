@@ -12,7 +12,17 @@ class BallPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Ball();
+    return Scaffold(
+      backgroundColor: Colors.blue,
+      appBar: AppBar(
+        backgroundColor: Colors.blue.shade900,
+        title: Text(
+          'Ask Me Anything',
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
+      body: Ball(),
+    );
   }
 }
 
@@ -34,14 +44,15 @@ class _BallState extends State<Ball> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialButton(
-      color: Colors.blue,
-      onPressed: () {
-        //print('I got clicked');
-        randomizeTheBallNmber();
-        //print(ballNumber);
-      },
-      child: Image.asset('images/ball$ballNumber.png'),
+    return Center(
+      child: MaterialButton(
+        onPressed: () {
+          //print('I got clicked');
+          randomizeTheBallNmber();
+          //print(ballNumber);
+        },
+        child: Image.asset('images/ball$ballNumber.png'),
+      ),
     );
   }
 }
